@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮换</title>
+</head>
+
+<style>
+	#outer{
+		border: 2px solid black;
+		width: 500px;
+		height: 350px;
+		margin:0 auto;
+	}
+	#outer>div{
+		width: 500px;
+		height: 300px;
+		display: none;
+	}
+	.next{
+		position: relative;
+  		left: 415px;
+  		top: -36px;
+	}
+	ul{list-style-type: none;}
+	.choose li{
+		float: left;
+		width: 20px;
+		height: 17px;
+		border: 1px solid black;
+		border-radius: 2px;
+		text-align: center;
+
+	}
+	.choose li:hover{cursor: pointer;}
+	.choose{
+		margin-left: 170px;
+	}
+	img{
+		width: 500px;
+	}
+</style>
+<body>
+	<div id="outer">
+		<div>
+			<img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=b7106c97312ac65c675035339dcf8623/8601a18b87d6277f13b882cf2c381f30e824fc9b.jpg" alt = "My Image" title = "My Image"/>
+		</div>
+		<div >
+			<img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=5abeda13b71c8701d6e3e1a64142aa1d/738b4710b912c8fcb703923af8039245d7882150.jpg" alt = "My Image" title = "My Image"/>
+		</div>
+		<div >
+			<img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=4d5e88682adda3cc0bb1eb6067d40d33/622762d0f703918fa6842c3d553d269758eec4eb.jpg" alt = "My Image" title = "My Image"/>
+		</div>
+		<div >
+			<img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=838f3cf7ed24b899de692a78083b29a7/d53f8794a4c27d1e79ac2d331fd5ad6edcc438ba.jpg" alt = "My Image" title = "My Image"/>
+		</div>
+			
+	</div>
+	<div class="next">
+			<ul class="choose">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+</body>
+<script>
+	var outer1=document.getElementById('outer');
+	var div1=outer1.getElementsByTagName('div');
+	var h=0
+	function swap (){
+		if(h>0)
+			{div1[h-1].style.display="none";}
+		else{div1[div1.length-1].style.display="none";};
+		div1[h].style.display="block";
+		h++;
+		while(h>=4){
+			h=0;
+		}
+	}
+	window.onload = function () {
+			setInterval(swap,4000) ;
+	}
+</script>
+</html>
