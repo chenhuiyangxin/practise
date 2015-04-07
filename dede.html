@@ -39,6 +39,10 @@
 	img{
 		width: 500px;
 	}
+	.change{
+		background-color: black;
+		color: white;
+	}
 </style>
 <body>
 	<div id="outer">
@@ -68,19 +72,28 @@
 <script>
 	var outer1=document.getElementById('outer');
 	var div1=outer1.getElementsByTagName('div');
-	var h=0
+	var uls=document.getElementsByTagName("ul");
+	var lis=uls[0].getElementsByTagName('li');
+	var h=0;
 	function swap (){
 		if(h>0)
-			{div1[h-1].style.display="none";}
-		else{div1[div1.length-1].style.display="none";};
+			{div1[h-1].style.display="none";
+			lis[h-1].className=""
+			}
+		else{div1[div1.length-1].style.display="none";
+			lis[lis.length-1].className=""
+			};
 		div1[h].style.display="block";
+		lis[h].className="change"
 		h++;
 		while(h>=4){
 			h=0;
 		}
 	}
 	window.onload = function () {
-			setInterval(swap,4000) ;
+			div1[0].style.display="block";
+			lis[0].className="change"
+			setInterval(swap,3000) ;
 	}
 </script>
 </html>
