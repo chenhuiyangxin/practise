@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	#outer div{
+		float: left;
+	}
+	#outer{
+		margin-left: 580px;
+		margin-top: 100px
+	}
+	#in2{
+		width: 30px;
+	}
+</style>
+
+<body>
+	<div id="outer">
+		<div id="d1">
+			<input id="in1" type="button" value="-">
+		</div>
+		<div id="d2">
+			<input  id="in2" type="text" value="0">
+		</div>
+		<div  id="d3">
+			<input id="in3" type="button" value="+">
+		</div>
+	</div>
+</body>
+<script>
+	var div1=document.getElementById('in1');
+	var div2=document.getElementById('in2');
+	var div3=document.getElementById('in3');
+	div1.onclick=function () {
+		if(div2.value==0){
+			this.disabled="true";
+			alert("不能少于0");
+			div3.disabled=false;
+		}
+		else{
+			div3.disabled=false;
+			div2.value--;
+		}
+	}
+	div3.onclick=function(){
+		if(div2.value<10){
+			div2.value++;
+		div1.disabled=false;
+			
+		}
+		else {
+		this.disabled="true";
+		alert("不能多于10");
+		div1.disabled=false;
+		}
+	}
+</script>
+</html>
