@@ -1,44 +1,127 @@
-body,ul,li,p,h3 {margin: 0;padding: 0}
-ul,ol {list-style: none;}
+body,ul,li,p,h3{margin:0;padding: 0;}
+ul,ol{list-style: none;}
 
-/*外框*/
-.wrapper{ height:128px; border:1px solid #d3d3d3; border-color:rgba(0,0,0,.12); overflow:hidden; width:938px; background:#fff;}
+.wrapper{
+	width: 938px;
+	height: 128px;
+	border: 1px solid #d3d3d3;
+}
 
-/*动画效果*/
-/*2-2题目 动画样式的补全*/
-/*.wrapper ul *{ transition:all .1s linear;}*/
+.wrapper li{
+	width: 156px;
+	height: 128px;
+	float:left;
+	overflow: hidden;
+}
+
+.wrapper li a{
+	display: block; 
+	height: 128px; 
+	width: 156px;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.wrapper li img{
+	position: absolute;
+	bottom:0;
+	right:-15px;
+	height: 72px;
+	width:117px;
+}
+
+.wrapper .info{
+	position: absolute;
+	top:0;
+	left:0;
+	width:  136px;
+	padding: 4px 10px;
 
 
-.wrapper li{ width:156px; height:128px; float:left; overflow:hidden;}
-.wrapper li a{ width:156px; height:128px; display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;}
+}
 
-/*当前列表项悬停遮罩层消失*/
-/*2-1题目补全*/
-/*.wrapper li a:hover .mask{ opacity:0;}*/
+.wrapper .info h3{
+	font-size: 14px;
+	font-weight: 700;
+}
 
-.wrapper li img{ height:72px; width:117px; position:absolute; bottom:0; right:-13px;}
-.wrapper li .line{ height:128px; width:0; font-size:0; border-right:1px dashed #cacaca; position:absolute; right:0; top:4px;}
-.wrapper li .info{ position:absolute; top:0; left:0; width:136px; padding:4px 10px;}
-.wrapper li .info h3{ font-size:14px; font-weight:700;}
-.wrapper li .info p{ color:#868686; font-size:12px; overflow:hidden; width:136px; height:22px; line-height:22px;}
-.wrapper li .info p.price{ font-size:14px; font-style:italic; color:#fa2a5d; height:35px;}
-.wrapper li .info p.price strong{ font-size:22px; font-family:Arial; padding-right:2px;}
-.wrapper li .info p.price i{ font-size:14px}
+.wrapper .info p{
+	color:#868686;
+	font-size: 12px; 
+	height:22px;
+	line-height: 22px;
+	width:136px;
+	overflow: hidden;
+}
 
-/*遮罩层的样式*/
-/*2-3 遮罩层样式的绝对定位的补全*/
-.wrapper .mask{ height:128px; width:156px; display:block; /*position:absolute;*/ top:0; left:0; background:#000;opacity:0;}
+.wrapper .info .price{
+	font-size: 14px;
+	font-style: italic;
+	color:#fa2a5d;
+	height: 35px;
+}
 
-/*遮罩层悬停时显示阴影*/
-.wrapper:hover .mask{opacity:.15;}
+.wrapper .line{
+	position:absolute;
+	right:0;
+	width:0;
+	height:128px;
+	border:1px dashed #cacaca;
+}
 
-/*展开状态*/
-.wrapper .big, .wrapper .big a { width:314px}
-.wrapper .big img{ width:195px; height:120px; right:0; bottom:0;}
-.wrapper .big .info{ width:294px;}
-.wrapper .big .info h3{ font-size:18px;}
-.wrapper .big .info p{ font-size:14px; width:166px;}
-.wrapper .big .info p.price{ font-size:16px; padding-top:7px;}
-.wrapper .big .info p.price strong{ font-size:28px;}
-.wrapper .big .info p.price i{ font-size:16px;}
-.wrapper .big .mask{ width:314px;}
+.wrapper .mask{
+	position:absolute;
+	top:0;
+	left:0;
+	height:128px;
+	width:156px;
+	opacity:0;
+	background: #000;
+}
+
+.wrapper:hover .mask{
+	opacity: 0.15;
+}
+
+.wrapper ul * {
+	transition:all linear 0.1s;
+}
+
+.wrapper li.big{
+	width:314px;
+}
+
+li.big a{
+	width:314px;
+}
+
+.wrapper li.big img{
+	width: 195px;
+	height:120px;
+	right:0;
+	bottom:0;
+}
+
+.wrapper li.big .info{
+	width: 290px
+}
+
+.wrapper li.big h3{
+	font-size: 18px;
+}
+
+.wrapper li.big p{
+	font-size: 14px;
+	width: 166px;
+
+}
+
+.wrapper li.big p.price{
+	font-size: 16px;
+	padding-top: 7px;
+}
+
+.wrapper li.big a:hover .mask{
+	opacity: 0;
+}
