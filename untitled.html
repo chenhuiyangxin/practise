@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<button type="button" id="block">fang</button>
+	<button type="button" id="circle">yuan</button>
+</body>
+<script>
+var blo = document.getElementById("block");
+var cir = document.getElementById("circle");
+var node = document.getElementsByTagName("body")[0];
+blo.onclick = function(){
+	node.onclick = function(){
+		var newdiv = document.createElement("div");
+		newdiv.style.position="absolute";
+		newdiv.style.width="100px";
+		newdiv.style.height="100px";
+		newdiv.style.background="black"
+		newdiv.style.left=event.clientX - 50;
+		newdiv.style.top=event.clientY - 50;
+		node.appendChild(newdiv);
+		newdiv.onclick=function(){
+			console.log('Hello!!，I am block');
+		}
+		
+	}
+}
+cir.onclick = function(){
+	node.onclick = function(){
+		var newdiv = document.createElement("div");
+		newdiv.style.position="absolute";
+		newdiv.style.width="98px";
+		newdiv.style.height="98px";
+		newdiv.style.border="1px";
+		newdiv.style.border="black";
+		newdiv.style.border="solid";
+		//newdiv.style.borderradius="100%";
+		newdiv.style.background="black"
+		newdiv.style.left=event.clientX - 49;
+		newdiv.style.top=event.clientY - 49;
+		node.appendChild(newdiv);
+		newdiv.onclick=function(){
+			console.log('Hello!!，I am circle');
+			newdiv.onclick=function(){
+				console.log('Goodby!!');
+				
+			}
+		}
+		
+	}
+}
+</script>
+</html>
