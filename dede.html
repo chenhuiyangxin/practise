@@ -82,6 +82,7 @@
 			{div1[h-1].style.display="none";
 			lis[h-1].className=""
 			}
+			//轮换到最后一个
 		else{div1[div1.length-1].style.display="none";
 			lis[lis.length-1].className=""
 			};
@@ -93,13 +94,14 @@
 		}
 	}
 	window.onload = function () {
+			//一开始要有图片
 			div1[0].style.display="block";
 			lis[0].className="change";
 			stop=setInterval(swap,3000);	
 	}
 	for(var i=0;i<lis.length;i++){
 		lis[i].onmouseover =function (){
-			
+			//将所有清空
 			for(var i=0;i<div1.length;i++){
 				div1[i].style.display="none";
 				lis[i].className=""

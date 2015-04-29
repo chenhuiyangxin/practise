@@ -38,6 +38,7 @@
 	
 	function get_nextSibling(n){
         var x=n.nextSibling;
+        //紧随其后的字节点为元素节点
         while (x && x.nodeType!=1){
             x=x.nextSibling;
         }
