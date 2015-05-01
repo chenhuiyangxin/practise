@@ -16,9 +16,15 @@
 			context.strokeStyle = "blue";
 			for(var i = 0;i<=10;i++){
 			context.beginPath();
-			context.arc(50+i*100,300,200,0.5*Math.PI,1.5*Math.PI*((i+1)/10),true);
+			context.arc(50+i*100,300,20,0.5*Math.PI,1.5*Math.PI*((i+1)/10),true);
 			context.closePath();
 			context.stroke();}
+			context.fillStyle = "red"
+			for(var i = 0;i<=10;i++){
+			context.beginPath();
+			context.arc(50+i*100,400,20,0.5*Math.PI,1.5*Math.PI*((i+1)/10),true);
+			context.closePath();
+			context.fill();}
 
 			}
 	</script>
