@@ -3,7 +3,7 @@ var window_height = 768;
 var radius = 8;
 var margin_top = 60;
 var margin_left = 30;
-var endTime = new Date(2015,4,2,18,47,52);
+var endTime = new Date(2015,4,5,18,47,52);
 var csts = 0;
 
 window.onload = function () {
