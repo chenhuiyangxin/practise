@@ -1,0 +1,13 @@
+.toolbabr {
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  margin-left: -26px; }
+
+.toolbar-item {
+  display: block;
+  width: 52px;
+  height: 52px;
+  background-image: url(./img/toolbabr.png);
+  background-repeat: no-repeat;
+  margin-top: 1px; }
