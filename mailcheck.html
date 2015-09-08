@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	#show{
+		display: none;
+	}
+</style>
+<body>
+	<input type="text" id="input">
+	<div id="show">错误</div>
+</body>
+<script>
+	window.onload = function(){
+		var stop;
+		stop = setInterval(function() {
+			var input = document.getElementById('input');
+			var show = document.getElementById('show');
+			var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if (input.value != "") {
+				if (filter.test(input.value)) {
+				show.style.display = "none";
+			}
+			else{
+				show.style.display = "block"
+			}
+			;
+			};
+			
+
+		},30)
+	}
+
+</script>
+</html>
